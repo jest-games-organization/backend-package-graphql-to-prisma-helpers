@@ -9,4 +9,6 @@ export { mapGraphQLFilterByIntNestedToPrismaNestedIntFilter } from './mapGraphQL
 export { mapGraphQLFilterByIntToPrismaIntFilter } from './mapGraphQLFilterByIntToPrismaIntFilter';
 export { mapGraphQLFilterByModeToPrismaQueryMode } from './mapGraphQLFilterByModeToPrismaQueryMode';
 export { mapGraphQLFilterByStringNestedToPrismaNestedStringFilter } from './mapGraphQLFilterByStringNestedToPrismaNestedStringFilter';
+export { mapGraphQLFilterByStringNestedToPrismaNestedStringNullableFilter } from './mapGraphQLFilterByStringNestedToPrismaNestedStringNullableFilter';
 export { mapGraphQLFilterByStringToPrismaStringFilter } from './mapGraphQLFilterByStringToPrismaStringFilter';
+export { mapGraphQLFilterByStringToPrismaStringNullableFilter } from './mapGraphQLFilterByStringToPrismaStringNullableFilter';

@@ -5,7 +5,7 @@ import { mapGraphQLFilterByDateNestedToPrismaNestedDateTimeFilter } from './mapG
 /**
  * Map the GraphQL filter by date to the Prisma date time filter.
  * @param f The GraphQL filter by date.
- * @returns The Prisma DateTime filter.
+ * @returns The Prisma date time filter.
  */
 export const mapGraphQLFilterByDateToPrismaDateTimeFilter = (f: FilterByDate): DateTimeFilter => {
   return {

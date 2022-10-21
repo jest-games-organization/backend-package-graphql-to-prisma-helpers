@@ -1,4 +1,5 @@
 import { decodeCursor } from '@jest-games-organization/backend-package-graphql-helpers';
+import { OrderByDirection } from '@jest-games-organization/backend-package-graphql-types';
 import { WhereInput } from '@jest-games-organization/backend-package-prisma-types';
 
 /**
@@ -24,7 +25,7 @@ export const mapGraphQLCursorToPrismaWhereInput = <Record extends { [key: string
     const [key, direction] = Object.entries(args.orderBy[i])[0];
 
     // Check if the direction is ascending.
-    const isAsc = direction === 'asc';
+    const isAsc = direction === OrderByDirection.Ascending;
 
     // Get the data value for the order by key.
     const value = data[key];

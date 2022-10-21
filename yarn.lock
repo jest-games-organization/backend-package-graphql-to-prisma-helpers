@@ -415,15 +415,15 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.3.tgz#e45e384e4b8ec16bce2fd903af78450f6bf7ec98"
   integrity sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==
 
-"@jest-games-organization/backend-package-graphql-helpers@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@jest-games-organization/backend-package-graphql-helpers/-/backend-package-graphql-helpers-1.0.5.tgz#b3161e09f9b48694be13967c72436f6eba907d3d"
-  integrity sha512-4b6XPGC8uMXdZBX/xf+Hv3NJTjaK2U5gOfE7BoeaE1Zpsgyb/VBVWA4D2AyxQKzwUBZSB5KD5vYb/yAn4hSZ+w==
+"@jest-games-organization/backend-package-graphql-helpers@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@jest-games-organization/backend-package-graphql-helpers/-/backend-package-graphql-helpers-1.0.7.tgz#0de87b285276f0733999047a02bc8066f119e230"
+  integrity sha512-b1FUk1SJpVC7WM1kYDFL41zTOOx9QZn9Y/cydM0t1uHXeGKeEsqLL3CcRjAUUveJm/8NmW4O83ET90QFGrA+dA==
 
-"@jest-games-organization/backend-package-graphql-types@^1.0.10":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@jest-games-organization/backend-package-graphql-types/-/backend-package-graphql-types-1.0.10.tgz#6f35b8d643cea7370a574b7156508082f69c8b39"
-  integrity sha512-tL6GGlmI0+QDrZhSbjkiItMjC+VvWb/LrrC3xVHR1Hn2PAmEb0jCXUsAVep5M09pNosfbOfLXrMEFzcb3KG9hA==
+"@jest-games-organization/backend-package-graphql-types@^1.0.11":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@jest-games-organization/backend-package-graphql-types/-/backend-package-graphql-types-1.0.11.tgz#0ab44874becd5ffba8e64841a483be7f17a685ef"
+  integrity sha512-6mIyGVPnRUzXP3gskQAp0v0YUtC0yMPmQk5Pf/JT2KadpbrVqGYKRYE4r7Y3B13V+AX7TnCL1uSbMkVQ6H+XHA==
 
 "@jest-games-organization/backend-package-object-helpers@^1.0.2":
   version "1.0.2"

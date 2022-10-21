@@ -420,10 +420,10 @@
   resolved "https://registry.yarnpkg.com/@jest-games-organization/backend-package-graphql-helpers/-/backend-package-graphql-helpers-1.0.5.tgz#b3161e09f9b48694be13967c72436f6eba907d3d"
   integrity sha512-4b6XPGC8uMXdZBX/xf+Hv3NJTjaK2U5gOfE7BoeaE1Zpsgyb/VBVWA4D2AyxQKzwUBZSB5KD5vYb/yAn4hSZ+w==
 
-"@jest-games-organization/backend-package-graphql-types@^1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@jest-games-organization/backend-package-graphql-types/-/backend-package-graphql-types-1.0.9.tgz#21bd41391abd24a12a4dc83403fb6284f991bbd5"
-  integrity sha512-p6URH573MPKaTAE5y1v4UWbKn0IlswL6v5h8ByuUj9Siy0I6kXazMzbPNCMh3n4CAVXlZM4vu5rM/A3pt24htw==
+"@jest-games-organization/backend-package-graphql-types@^1.0.10":
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/@jest-games-organization/backend-package-graphql-types/-/backend-package-graphql-types-1.0.10.tgz#6f35b8d643cea7370a574b7156508082f69c8b39"
+  integrity sha512-tL6GGlmI0+QDrZhSbjkiItMjC+VvWb/LrrC3xVHR1Hn2PAmEb0jCXUsAVep5M09pNosfbOfLXrMEFzcb3KG9hA==
 
 "@jest-games-organization/backend-package-object-helpers@^1.0.2":
   version "1.0.2"

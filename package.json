@@ -30,7 +30,7 @@
   "devDependencies": {
     "@babel/core": "^7.19.1",
     "@babel/preset-typescript": "^7.18.6",
-    "@jest-games-organization/backend-package-graphql-helpers": "^1.0.10",
+    "@jest-games-organization/backend-package-graphql-helpers": "^1.0.11",
     "@jest-games-organization/backend-package-graphql-types": "^1.0.14",
     "@jest-games-organization/backend-package-object-helpers": "^1.0.2",
     "@jest-games-organization/backend-package-object-types": "^1.0.0",
@@ -56,7 +56,7 @@
     "typescript": "^4.8.4"
   },
   "peerDependencies": {
-    "@jest-games-organization/backend-package-graphql-helpers": "^1.0.10",
+    "@jest-games-organization/backend-package-graphql-helpers": "^1.0.11",
     "@jest-games-organization/backend-package-graphql-types": "^1.0.14",
     "@jest-games-organization/backend-package-object-helpers": "^1.0.2",
     "@jest-games-organization/backend-package-object-types": "^1.0.0",

@@ -1,3 +1,4 @@
+import { OrderByDirection } from '@jest-games-organization/backend-package-graphql-types';
 import { encodeObject } from '@jest-games-organization/backend-package-object-helpers';
 import { mapGraphQLCursorToPrismaWhereInput } from '../../helpers/mapGraphQLCursorToPrismaWhereInput';
 
@@ -6,7 +7,14 @@ describe('GIVEN the mapGraphQLCursorToPrismaWhereInput method', () => {
 
   beforeEach(() => {
     cursor = encodeObject({
-      args: { orderBy: [{ isAdmin: 'desc' }, { updatedAt: 'asc' }, { createdAt: 'desc' }, { id: 'asc' }] },
+      args: {
+        orderBy: [
+          { isAdmin: OrderByDirection.Descending },
+          { updatedAt: OrderByDirection.Ascending },
+          { createdAt: OrderByDirection.Descending },
+          { id: OrderByDirection.Ascending },
+        ],
+      },
       data: { id: null, createdAt: 'mockCreatedAt', updatedAt: 'mockUpdatedAt', isAdmin: null },
     });
   });

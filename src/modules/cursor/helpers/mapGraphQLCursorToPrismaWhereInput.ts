@@ -7,7 +7,7 @@ import { WhereInput } from '@jest-games-organization/backend-package-prisma-type
  * @param cursor The GraphQL cursor
  * @returns The Prisma where input
  */
-export const mapGraphQLCursorToPrismaWhereInput = <Record extends { [key: string]: unknown }>(
+export const mapGraphQLCursorToPrismaWhereInput = <Record extends { [key: string]: any }>(
   cursor: string,
 ): WhereInput<Record> => {
   // Decode the cursor.

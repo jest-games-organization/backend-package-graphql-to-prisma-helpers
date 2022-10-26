@@ -3,56 +3,80 @@ import { encodeObject } from '@jest-games-organization/backend-package-object-he
 import { mapGraphQLCursorToPrismaWhereInput } from '../../helpers/mapGraphQLCursorToPrismaWhereInput';
 
 describe('GIVEN the mapGraphQLCursorToPrismaWhereInput method', () => {
-  let cursor: string;
+  let cursor: string | null | undefined;
 
-  beforeEach(() => {
-    cursor = encodeObject({
-      args: {
-        orderBy: [
-          { isAdmin: OrderByDirection.Descending },
-          { updatedAt: OrderByDirection.Ascending },
-          { createdAt: OrderByDirection.Descending },
-          { id: OrderByDirection.Ascending },
-        ],
-      },
-      data: { id: null, createdAt: 'mockCreatedAt', updatedAt: 'mockUpdatedAt', isAdmin: null },
+  describe('WHEN the cursor is null', () => {
+    beforeEach(() => {
+      cursor = null;
+    });
+
+    test('THEN it should return undefined', () => {
+      const response = mapGraphQLCursorToPrismaWhereInput(cursor);
+      expect(response).toBeUndefined();
     });
   });
 
-  test('THEN it should return the prisma where input', () => {
-    const response = mapGraphQLCursorToPrismaWhereInput(cursor);
-    expect(response).toEqual({
-      OR: [
-        { isAdmin: { not: null } },
-        {
-          AND: [
-            { isAdmin: { equals: null } },
-            {
-              OR: [
-                { updatedAt: { gt: 'mockUpdatedAt' } },
-                {
-                  AND: [
-                    { updatedAt: { equals: 'mockUpdatedAt' } },
-                    {
-                      OR: [
-                        { createdAt: { lt: 'mockCreatedAt' } },
-                        {
-                          AND: [
-                            { createdAt: { equals: 'mockCreatedAt' } },
-                            {
-                              OR: [{ id: { not: null } }],
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
-            },
+  describe('WHEN the cursor is undefined', () => {
+    beforeEach(() => {
+      cursor = undefined;
+    });
+
+    test('THEN it should return undefined', () => {
+      const response = mapGraphQLCursorToPrismaWhereInput(cursor);
+      expect(response).toBeUndefined();
+    });
+  });
+
+  describe('WHEN the cursor is not null or undefined', () => {
+    beforeEach(() => {
+      cursor = encodeObject({
+        args: {
+          orderBy: [
+            { isAdmin: OrderByDirection.Descending },
+            { updatedAt: OrderByDirection.Ascending },
+            { createdAt: OrderByDirection.Descending },
+            { id: OrderByDirection.Ascending },
           ],
         },
-      ],
+        data: { id: null, createdAt: 'mockCreatedAt', updatedAt: 'mockUpdatedAt', isAdmin: null },
+      });
+    });
+
+    test('THEN it should return the prisma where input', () => {
+      const response = mapGraphQLCursorToPrismaWhereInput(cursor);
+      expect(response).toEqual({
+        OR: [
+          { isAdmin: { not: null } },
+          {
+            AND: [
+              { isAdmin: { equals: null } },
+              {
+                OR: [
+                  { updatedAt: { gt: 'mockUpdatedAt' } },
+                  {
+                    AND: [
+                      { updatedAt: { equals: 'mockUpdatedAt' } },
+                      {
+                        OR: [
+                          { createdAt: { lt: 'mockCreatedAt' } },
+                          {
+                            AND: [
+                              { createdAt: { equals: 'mockCreatedAt' } },
+                              {
+                                OR: [{ id: { not: null } }],
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      });
     });
   });
 });

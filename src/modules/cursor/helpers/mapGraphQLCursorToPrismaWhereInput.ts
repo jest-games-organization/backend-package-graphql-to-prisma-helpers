@@ -8,8 +8,13 @@ import { WhereInput } from '@jest-games-organization/backend-package-prisma-type
  * @returns The Prisma where input
  */
 export const mapGraphQLCursorToPrismaWhereInput = <Record extends { [key: string]: any }>(
-  cursor: string,
-): WhereInput<Record> => {
+  cursor?: string | null | undefined,
+): WhereInput<Record> | undefined => {
+  // If the cursor is null or undefined, return undefined.
+  if (cursor === null || cursor === undefined) {
+    return undefined;
+  }
+
   // Decode the cursor.
   const { args, data } = decodeCursor<Record>(cursor);
 

@@ -3,21 +3,29 @@ import { NestedStringFilter } from '@jest-games-organization/backend-package-pri
 
 /**
  * Map the GraphQL filter by id nested to the Prisma string filter.
- * @param f The GraphQL filter by id nested.
+ * @param filter The GraphQL filter by id nested.
  * @returns The Prisma nested string filter.
  */
-export const mapGraphQLFilterByIdNestedToPrismaNestedStringFilter = (f: FilterByIdNested): NestedStringFilter => {
+export const mapGraphQLFilterByIdNestedToPrismaNestedStringFilter = (
+  filter: FilterByIdNested | null | undefined,
+): NestedStringFilter | undefined => {
+  // If the filter by id nested is null or undefined, return undefined.
+  if (filter === null || filter === undefined) {
+    return undefined;
+  }
+
+  // Return the Prisma nested string filter.
   return {
-    contains: f.contains ?? undefined,
-    endsWith: f.endsWith ?? undefined,
-    equals: f.equals ?? undefined,
-    gt: f.gt ?? undefined,
-    gte: f.gte ?? undefined,
-    in: f.in?.filter((o): o is string => !!o),
-    lt: f.lt ?? undefined,
-    lte: f.lte ?? undefined,
-    not: f.not ? mapGraphQLFilterByIdNestedToPrismaNestedStringFilter(f.not) : undefined,
-    notIn: f.notIn?.filter((o): o is string => !!o),
-    startsWith: f.startsWith ?? undefined,
+    contains: filter.contains ?? undefined,
+    endsWith: filter.endsWith ?? undefined,
+    equals: filter.equals ?? undefined,
+    gt: filter.gt ?? undefined,
+    gte: filter.gte ?? undefined,
+    in: filter.in?.filter((o): o is string => !!o),
+    lt: filter.lt ?? undefined,
+    lte: filter.lte ?? undefined,
+    not: mapGraphQLFilterByIdNestedToPrismaNestedStringFilter(filter.not),
+    notIn: filter.notIn?.filter((o): o is string => !!o),
+    startsWith: filter.startsWith ?? undefined,
   };
 };

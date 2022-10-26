@@ -5,22 +5,30 @@ import { mapGraphQLFilterByModeToPrismaQueryMode } from './mapGraphQLFilterByMod
 
 /**
  * Map the GraphQL filter by id to the Prisma string filter.
- * @param f The GraphQL filter by id.
+ * @param filter The GraphQL filter by id.
  * @returns The Prisma string filter.
  */
-export const mapGraphQLFilterByIdToPrismaStringFilter = (f: FilterById): StringFilter => {
+export const mapGraphQLFilterByIdToPrismaStringFilter = (
+  filter: FilterById | null | undefined,
+): StringFilter | undefined => {
+  // If the filter by id is null or undefined, return undefined.
+  if (filter === null || filter === undefined) {
+    return undefined;
+  }
+
+  // Return the Prisma string filter.
   return {
-    contains: f.contains ?? undefined,
-    endsWith: f.endsWith ?? undefined,
-    equals: f.equals ?? undefined,
-    gt: f.gt ?? undefined,
-    gte: f.gte ?? undefined,
-    in: f.in?.filter((o): o is string => !!o),
-    lt: f.lt ?? undefined,
-    lte: f.lte ?? undefined,
-    mode: f.mode ? mapGraphQLFilterByModeToPrismaQueryMode(f.mode) : undefined,
-    not: f.not ? mapGraphQLFilterByIdNestedToPrismaNestedStringFilter(f.not) : undefined,
-    notIn: f.notIn?.filter((o): o is string => !!o),
-    startsWith: f.startsWith ?? undefined,
+    contains: filter.contains ?? undefined,
+    endsWith: filter.endsWith ?? undefined,
+    equals: filter.equals ?? undefined,
+    gt: filter.gt ?? undefined,
+    gte: filter.gte ?? undefined,
+    in: filter.in?.filter((o): o is string => !!o),
+    lt: filter.lt ?? undefined,
+    lte: filter.lte ?? undefined,
+    mode: mapGraphQLFilterByModeToPrismaQueryMode(filter.mode),
+    not: mapGraphQLFilterByIdNestedToPrismaNestedStringFilter(filter.not),
+    notIn: filter.notIn?.filter((o): o is string => !!o),
+    startsWith: filter.startsWith ?? undefined,
   };
 };

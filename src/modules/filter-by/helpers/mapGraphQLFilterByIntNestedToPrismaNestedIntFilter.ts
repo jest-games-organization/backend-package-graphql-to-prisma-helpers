@@ -3,18 +3,26 @@ import { NestedIntFilter } from '@jest-games-organization/backend-package-prisma
 
 /**
  * Map the GraphQL filter by int nested to a Prisma int filter.
- * @param f The GraphQL filter by int nested.
+ * @param filter The GraphQL filter by int nested.
  * @returns The Prisma nested int filter.
  */
-export const mapGraphQLFilterByIntNestedToPrismaNestedIntFilter = (f: FilterByIntNested): NestedIntFilter => {
+export const mapGraphQLFilterByIntNestedToPrismaNestedIntFilter = (
+  filter: FilterByIntNested | null | undefined,
+): NestedIntFilter | undefined => {
+  // If the filter by int nested is null or undefined, return undefined.
+  if (filter === null || filter === undefined) {
+    return undefined;
+  }
+
+  // Return the Prisma nested int filter.
   return {
-    equals: f.equals ?? undefined,
-    in: f.in?.filter((o): o is number => !!o),
-    notIn: f.notIn?.filter((o): o is number => !!o),
-    lt: f.lt ?? undefined,
-    lte: f.lte ?? undefined,
-    gt: f.gt ?? undefined,
-    gte: f.gte ?? undefined,
-    not: f.not ? mapGraphQLFilterByIntNestedToPrismaNestedIntFilter(f.not) : undefined,
+    equals: filter.equals ?? undefined,
+    in: filter.in?.filter((o): o is number => !!o),
+    notIn: filter.notIn?.filter((o): o is number => !!o),
+    lt: filter.lt ?? undefined,
+    lte: filter.lte ?? undefined,
+    gt: filter.gt ?? undefined,
+    gte: filter.gte ?? undefined,
+    not: mapGraphQLFilterByIntNestedToPrismaNestedIntFilter(filter.not),
   };
 };

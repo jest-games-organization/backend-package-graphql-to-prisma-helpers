@@ -4,18 +4,26 @@ import { mapGraphQLFilterByDateNestedToPrismaNestedDateTimeNullableFilter } from
 
 /**
  * Map the GraphQL filter by date to the Prisma date time nullable filter.
- * @param f The GraphQL filter by date.
+ * @param filter The GraphQL filter by date.
  * @returns The Prisma date time nullable filter.
  */
-export const mapGraphQLFilterByDateToPrismaDateTimeNullableFilter = (f: FilterByDate): DateTimeNullableFilter => {
+export const mapGraphQLFilterByDateToPrismaDateTimeNullableFilter = (
+  filter: FilterByDate | null | undefined,
+): DateTimeNullableFilter | undefined => {
+  // If the filter by date is null or undefined, return undefined.
+  if (filter === null || filter === undefined) {
+    return undefined;
+  }
+
+  // Return the Prisma date time nullable filter.
   return {
-    equals: f.equals,
-    in: f.in ? f.in.filter((o): o is string => !!o) : f.in,
-    notIn: f.notIn ? f.notIn.filter((o): o is string => !!o) : f.notIn,
-    lt: f.lt ?? undefined,
-    lte: f.lte ?? undefined,
-    gt: f.gt ?? undefined,
-    gte: f.gte ?? undefined,
-    not: f.not ? mapGraphQLFilterByDateNestedToPrismaNestedDateTimeNullableFilter(f.not) : f.not,
+    equals: filter.equals,
+    in: filter.in ? filter.in.filter((o): o is string => !!o) : filter.in,
+    notIn: filter.notIn ? filter.notIn.filter((o): o is string => !!o) : filter.notIn,
+    lt: filter.lt ?? undefined,
+    lte: filter.lte ?? undefined,
+    gt: filter.gt ?? undefined,
+    gte: filter.gte ?? undefined,
+    not: filter.not ? mapGraphQLFilterByDateNestedToPrismaNestedDateTimeNullableFilter(filter.not) : filter.not,
   };
 };

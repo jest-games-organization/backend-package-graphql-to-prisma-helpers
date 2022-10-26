@@ -4,18 +4,26 @@ import { mapGraphQLFilterByFloatNestedToPrismaNestedFloatFilter } from './mapGra
 
 /**
  * Maps the GraphQL filter by float to a Prisma float filter.
- * @param f The GraphQL filter by float.
+ * @param filter The GraphQL filter by float.
  * @returns The Prisma float filter.
  */
-export const mapGraphQLFilterByFloatToPrismaFloatFilter = (f: FilterByFloat): FloatFilter => {
+export const mapGraphQLFilterByFloatToPrismaFloatFilter = (
+  filter: FilterByFloat | null | undefined,
+): FloatFilter | undefined => {
+  // If the filter by float is null or undefined, return undefined.
+  if (filter === null || filter === undefined) {
+    return undefined;
+  }
+
+  // Return the Prisma float filter.
   return {
-    equals: f.equals ?? undefined,
-    in: f.in?.filter((o): o is number => !!o),
-    notIn: f.notIn?.filter((o): o is number => !!o),
-    lt: f.lt ?? undefined,
-    lte: f.lte ?? undefined,
-    gt: f.gt ?? undefined,
-    gte: f.gte ?? undefined,
-    not: f.not ? mapGraphQLFilterByFloatNestedToPrismaNestedFloatFilter(f.not) : undefined,
+    equals: filter.equals ?? undefined,
+    in: filter.in?.filter((o): o is number => !!o),
+    notIn: filter.notIn?.filter((o): o is number => !!o),
+    lt: filter.lt ?? undefined,
+    lte: filter.lte ?? undefined,
+    gt: filter.gt ?? undefined,
+    gte: filter.gte ?? undefined,
+    not: mapGraphQLFilterByFloatNestedToPrismaNestedFloatFilter(filter.not),
   };
 };

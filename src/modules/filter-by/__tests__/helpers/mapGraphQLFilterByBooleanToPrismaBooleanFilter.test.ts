@@ -2,45 +2,69 @@ import { FilterByBoolean } from '@jest-games-organization/backend-package-graphq
 import { mapGraphQLFilterByBooleanToPrismaBooleanFilter } from '../../helpers/mapGraphQLFilterByBooleanToPrismaBooleanFilter';
 
 describe('GIVEN the mapGraphQLFilterByBooleanToPrismaBooleanFilter method', () => {
-  let graphQLFilterByBoolean: FilterByBoolean;
+  let filter: FilterByBoolean | null | undefined;
 
-  describe('AND the equals property', () => {
-    describe('WHEN the equals property is undefined', () => {
-      beforeEach(() => {
-        graphQLFilterByBoolean = {
-          equals: undefined,
-        };
-      });
-
-      test('THEN it should return the prisma boolean filter', () => {
-        const response = mapGraphQLFilterByBooleanToPrismaBooleanFilter(graphQLFilterByBoolean);
-        expect(response).toEqual({ equals: undefined });
-      });
+  describe('WHEN the filter by boolean is null', () => {
+    beforeEach(() => {
+      filter = null;
     });
 
-    describe('WHEN the equals property is null', () => {
-      beforeEach(() => {
-        graphQLFilterByBoolean = {
-          equals: null,
-        };
-      });
+    test('THEN it should return undefined', () => {
+      const response = mapGraphQLFilterByBooleanToPrismaBooleanFilter(filter);
+      expect(response).toBeUndefined();
+    });
+  });
 
-      test('THEN it should return the prisma boolean filter', () => {
-        const response = mapGraphQLFilterByBooleanToPrismaBooleanFilter(graphQLFilterByBoolean);
-        expect(response).toEqual({ equals: undefined });
-      });
+  describe('WHEN the filter by boolean is undefined', () => {
+    beforeEach(() => {
+      filter = undefined;
     });
 
-    describe('WHEN the equals property is set', () => {
-      beforeEach(() => {
-        graphQLFilterByBoolean = {
-          equals: true,
-        };
+    test('THEN it should return undefined', () => {
+      const response = mapGraphQLFilterByBooleanToPrismaBooleanFilter(filter);
+      expect(response).toBeUndefined();
+    });
+  });
+
+  describe('WHEN the filter by boolean is defined', () => {
+    describe('AND the equals property', () => {
+      describe('WHEN the equals property is undefined', () => {
+        beforeEach(() => {
+          filter = {
+            equals: undefined,
+          };
+        });
+
+        test('THEN it should return the prisma boolean filter', () => {
+          const response = mapGraphQLFilterByBooleanToPrismaBooleanFilter(filter);
+          expect(response).toEqual({ equals: undefined });
+        });
       });
 
-      test('THEN it should return the prisma boolean filter', () => {
-        const response = mapGraphQLFilterByBooleanToPrismaBooleanFilter(graphQLFilterByBoolean);
-        expect(response).toEqual({ equals: true });
+      describe('WHEN the equals property is null', () => {
+        beforeEach(() => {
+          filter = {
+            equals: null,
+          };
+        });
+
+        test('THEN it should return the prisma boolean filter', () => {
+          const response = mapGraphQLFilterByBooleanToPrismaBooleanFilter(filter);
+          expect(response).toEqual({ equals: undefined });
+        });
+      });
+
+      describe('WHEN the equals property is set', () => {
+        beforeEach(() => {
+          filter = {
+            equals: true,
+          };
+        });
+
+        test('THEN it should return the prisma boolean filter', () => {
+          const response = mapGraphQLFilterByBooleanToPrismaBooleanFilter(filter);
+          expect(response).toEqual({ equals: true });
+        });
       });
     });
   });

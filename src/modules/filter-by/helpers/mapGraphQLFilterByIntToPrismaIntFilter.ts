@@ -4,18 +4,26 @@ import { mapGraphQLFilterByIntNestedToPrismaNestedIntFilter } from './mapGraphQL
 
 /**
  * Map the GraphQL filter by int to a Prisma int filter.
- * @param f The GraphQL filter by int.
+ * @param filter The GraphQL filter by int.
  * @returns The int filter.
  */
-export const mapGraphQLFilterByIntToPrismaIntFilter = (f: FilterByInt): IntFilter => {
+export const mapGraphQLFilterByIntToPrismaIntFilter = (
+  filter: FilterByInt | null | undefined,
+): IntFilter | undefined => {
+  // If the filter by int is null or undefined, return undefined.
+  if (filter === null || filter === undefined) {
+    return undefined;
+  }
+
+  // Return the Prisma int filter.
   return {
-    equals: f.equals ?? undefined,
-    in: f.in?.filter((o): o is number => !!o),
-    notIn: f.notIn?.filter((o): o is number => !!o),
-    lt: f.lt ?? undefined,
-    lte: f.lte ?? undefined,
-    gt: f.gt ?? undefined,
-    gte: f.gte ?? undefined,
-    not: f.not ? mapGraphQLFilterByIntNestedToPrismaNestedIntFilter(f.not) : undefined,
+    equals: filter.equals ?? undefined,
+    in: filter.in?.filter((o): o is number => !!o),
+    notIn: filter.notIn?.filter((o): o is number => !!o),
+    lt: filter.lt ?? undefined,
+    lte: filter.lte ?? undefined,
+    gt: filter.gt ?? undefined,
+    gte: filter.gte ?? undefined,
+    not: mapGraphQLFilterByIntNestedToPrismaNestedIntFilter(filter.not),
   };
 };

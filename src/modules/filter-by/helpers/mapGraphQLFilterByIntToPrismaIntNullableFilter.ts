@@ -4,18 +4,26 @@ import { mapGraphQLFilterByIntNestedToPrismaNestedIntNullableFilter } from './ma
 
 /**
  * Map the GraphQL filter by int to a Prisma int nullable filter.
- * @param f The GraphQL filter by int.
+ * @param filter The GraphQL filter by int.
  * @returns The int nullable filter.
  */
-export const mapGraphQLFilterByIntToPrismaIntNullableFilter = (f: FilterByInt): IntNullableFilter => {
+export const mapGraphQLFilterByIntToPrismaIntNullableFilter = (
+  filter: FilterByInt | null | undefined,
+): IntNullableFilter | undefined => {
+  // If the filter by int is null or undefined, return undefined.
+  if (filter === null || filter === undefined) {
+    return undefined;
+  }
+
+  // Return the Prisma int nullable filter.
   return {
-    equals: f.equals,
-    in: f.in ? f.in.filter((o): o is number => !!o) : f.in,
-    notIn: f.notIn ? f.notIn.filter((o): o is number => !!o) : f.notIn,
-    lt: f.lt ?? undefined,
-    lte: f.lte ?? undefined,
-    gt: f.gt ?? undefined,
-    gte: f.gte ?? undefined,
-    not: f.not ? mapGraphQLFilterByIntNestedToPrismaNestedIntNullableFilter(f.not) : f.not,
+    equals: filter.equals,
+    in: filter.in ? filter.in.filter((o): o is number => !!o) : filter.in,
+    notIn: filter.notIn ? filter.notIn.filter((o): o is number => !!o) : filter.notIn,
+    lt: filter.lt ?? undefined,
+    lte: filter.lte ?? undefined,
+    gt: filter.gt ?? undefined,
+    gte: filter.gte ?? undefined,
+    not: filter.not ? mapGraphQLFilterByIntNestedToPrismaNestedIntNullableFilter(filter.not) : filter.not,
   };
 };

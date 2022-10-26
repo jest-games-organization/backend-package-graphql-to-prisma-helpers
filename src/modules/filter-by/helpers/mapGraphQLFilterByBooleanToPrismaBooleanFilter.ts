@@ -3,11 +3,19 @@ import { BooleanFilter } from '@jest-games-organization/backend-package-prisma-t
 
 /**
  * Maps the GraphQL filter by boolean to a Prisma boolean filter.
- * @param f The GraphQL filter by boolean.
+ * @param filter The GraphQL filter by boolean.
  * @returns The Prisma boolean filter.
  */
-export const mapGraphQLFilterByBooleanToPrismaBooleanFilter = (f: FilterByBoolean): BooleanFilter => {
+export const mapGraphQLFilterByBooleanToPrismaBooleanFilter = (
+  filter: FilterByBoolean | null | undefined,
+): BooleanFilter | undefined => {
+  // If the filter by boolean is null or undefined, return undefined.
+  if (filter === null || filter === undefined) {
+    return undefined;
+  }
+
+  // Return the Prisma boolean filter.
   return {
-    equals: f.equals ?? undefined,
+    equals: filter.equals ?? undefined,
   };
 };

@@ -1,1 +1,1 @@
-export { mapGraphQLOrderByDirectionToPrismaSortOrder } from './mapGraphQLOrderByDirectionToPrismaSortOrder';
+export { graphQLSortOrderToPrismaSortOrder } from './graphQLSortOrderToPrismaSortOrder';

@@ -9,7 +9,7 @@ import { SortOrder as PrismaSortOrder } from '@jest-games-organization/backend-p
 export const graphQLSortOrderToPrismaSortOrder = (
   sortOrder: GraphQLSortOrder | null | undefined,
 ): PrismaSortOrder | undefined => {
-  // If the sort order is null or undefined, return undefined.
+  // If the GraphQL sort order is null or undefined, return undefined.
   if (sortOrder === null || sortOrder === undefined) {
     return undefined;
   }

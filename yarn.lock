@@ -430,15 +430,15 @@
   resolved "https://registry.yarnpkg.com/@jest-games-organization/backend-package-object-helpers/-/backend-package-object-helpers-1.0.2.tgz#3182eb3ffb292723183957ea4bb5e934fc323bc3"
   integrity sha512-EIqClioPqRiZ0bPJFcpNM99jM8F8QZRdQvr9BJx73hzrGSRA3xgTd3K0FKwTQ6BlyosLofVy7hcsEmXpHXh65A==
 
-"@jest-games-organization/backend-package-object-types@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@jest-games-organization/backend-package-object-types/-/backend-package-object-types-1.0.0.tgz#54fb6bf37e1058dd7b2bf21702c2027fa2e1b2a1"
-  integrity sha512-ti081L+/NkAt3dhXd2nINYqYcemDtpm/y5u0jv5/WLDmYOXMLLrbavA8OlfeCPb399eThBaf498md/LeX00lWg==
+"@jest-games-organization/backend-package-object-types@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@jest-games-organization/backend-package-object-types/-/backend-package-object-types-1.0.1.tgz#1901d8a861d2ebf31b2e5f2aedc1d251d0865dd7"
+  integrity sha512-FIRtAuwdtg3U2OPjQ4ahfKZsoswdLL9s6FyqdKPPcCcDryPpsvTa5veZZIK7zY/N51K32fww7DSG1H1z8KXRmQ==
 
-"@jest-games-organization/backend-package-prisma-types@^1.0.17":
-  version "1.0.17"
-  resolved "https://registry.yarnpkg.com/@jest-games-organization/backend-package-prisma-types/-/backend-package-prisma-types-1.0.17.tgz#2e23ea6162a8976fd8ae48f5e5e5b0274c797083"
-  integrity sha512-Kw2Mhbagl6uhrlPMS4TdpKw9r9XD6/jYmv7Xkvmdb1rloTfHUTm4gagqN3q2gs2JhnhMy8BjdnOwybm8Oj+aIQ==
+"@jest-games-organization/backend-package-prisma-types@^1.0.18":
+  version "1.0.18"
+  resolved "https://registry.yarnpkg.com/@jest-games-organization/backend-package-prisma-types/-/backend-package-prisma-types-1.0.18.tgz#9ea22f94e5d201cbe719a73e7ef7c0315eb28139"
+  integrity sha512-fYTN+aJTuga+Z/402Md4NClnoVHOj1TPLpu/YHo3e0kY3w9m5GWr5vjokKyvmJWabUOi84Lki5zkkfvq8LVfcg==
 
 "@jest/console@^29.1.2":
   version "29.1.2"

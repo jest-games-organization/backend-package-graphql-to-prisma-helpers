@@ -2,7 +2,7 @@ Arguments:
   /home/conrardy/.nvm/versions/node/v16.17.0/bin/node /usr/share/yarn/bin/yarn.js publish --access public
 
 PATH: 
-  /tmp/yarn--1667150177319-0.8720887583538073:/home/conrardy/jest-games-organization/backend-package-graphql-to-prisma-helpers/node_modules/.bin:/home/conrardy/.config/yarn/link/node_modules/.bin:/home/conrardy/.yarn/bin:/home/conrardy/.nvm/versions/node/v16.17.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/home/conrardy/.nvm/versions/node/v16.17.0/lib/node_modules/npm/bin/node-gyp-bin:/home/conrardy/.nvm/versions/node/v16.17.0/bin/node_modules/npm/bin/node-gyp-bin:/home/conrardy/.cache/cloud-code/installer/google-cloud-sdk/bin:/home/conrardy/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/bin/remote-cli:/home/conrardy/.local/bin:/home/conrardy/.rover/bin:/home/conrardy/.nvm/versions/node/v16.17.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/Microsoft.WindowsTerminal_1.15.2875.0_x64__8wekyb3d8bbwe:/mnt/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Program Files/dotnet/:/mnt/c/Users/conra/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/conra/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/conra/.dotnet/tools:/snap/bin
+  /tmp/yarn--1667873088013-0.7260499565129872:/home/conrardy/jest-games-organization/backend-package-graphql-to-prisma-helpers/node_modules/.bin:/home/conrardy/.config/yarn/link/node_modules/.bin:/home/conrardy/.yarn/bin:/home/conrardy/.nvm/versions/node/v16.17.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/home/conrardy/.nvm/versions/node/v16.17.0/lib/node_modules/npm/bin/node-gyp-bin:/home/conrardy/.nvm/versions/node/v16.17.0/bin/node_modules/npm/bin/node-gyp-bin:/home/conrardy/.cache/cloud-code/installer/google-cloud-sdk/bin:/home/conrardy/.vscode-server/bin/d045a5eda657f4d7b676dedbfa7aab8207f8a075/bin/remote-cli:/home/conrardy/.local/bin:/home/conrardy/.rover/bin:/home/conrardy/.nvm/versions/node/v16.17.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/Microsoft.WindowsTerminal_1.15.2875.0_x64__8wekyb3d8bbwe:/mnt/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Program Files/dotnet/:/mnt/c/Users/conra/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/conra/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/conra/.dotnet/tools:/snap/bin
 
 Yarn version: 
   1.22.5
@@ -14,23 +14,23 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/-/user/org.couchdb.user:jest-games: failed to authenticate: Could not authenticate jest-games: bad password
-      at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:66988:18)
-      at Request.self.callback (/usr/share/yarn/lib/cli.js:140749:22)
-      at Request.emit (node:events:513:28)
-      at Request.<anonymous> (/usr/share/yarn/lib/cli.js:141721:10)
-      at Request.emit (node:events:513:28)
-      at IncomingMessage.<anonymous> (/usr/share/yarn/lib/cli.js:141643:12)
-      at Object.onceWrapper (node:events:627:28)
-      at IncomingMessage.emit (node:events:525:35)
-      at endReadableNT (node:internal/streams/readable:1358:12)
-      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+  Error: canceled
+      at Interface.<anonymous> (/usr/share/yarn/lib/cli.js:137009:13)
+      at Interface.emit (node:events:513:28)
+      at Interface._ttyWrite (node:readline:1085:16)
+      at ReadStream.onkeypress (node:readline:291:10)
+      at ReadStream.emit (node:events:513:28)
+      at emitKeys (node:internal/readline/utils:357:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (node:internal/readline/emitKeypressEvents:61:36)
+      at ReadStream.emit (node:events:513:28)
+      at addChunk (node:internal/streams/readable:315:12)
 
 npm manifest: 
   {
     "name": "@jest-games-organization/backend-package-graphql-to-prisma-helpers",
     "description": "This Jest Games Organization backend package provides GraphQL to Prisma helper methods for shared functionality.",
-    "version": "1.0.12",
+    "version": "1.0.13",
     "author": "Jest Games Organization",
     "license": "ISC",
     "main": "dist/index.cjs.js",
@@ -60,10 +60,10 @@ npm manifest:
       "@babel/core": "^7.19.1",
       "@babel/preset-typescript": "^7.18.6",
       "@jest-games-organization/backend-package-graphql-helpers": "^1.0.13",
-      "@jest-games-organization/backend-package-graphql-types": "^1.0.15",
+      "@jest-games-organization/backend-package-graphql-types": "^1.0.17",
       "@jest-games-organization/backend-package-object-helpers": "^1.0.2",
       "@jest-games-organization/backend-package-object-types": "^1.0.1",
-      "@jest-games-organization/backend-package-prisma-types": "^1.0.18",
+      "@jest-games-organization/backend-package-prisma-types": "^1.0.22",
       "@rollup/plugin-babel": "^5.3.1",
       "@rollup/plugin-node-resolve": "^14.1.0",
       "@types/jest": "^29.1.1",
@@ -85,11 +85,11 @@ npm manifest:
       "typescript": "^4.8.4"
     },
     "peerDependencies": {
-      "@jest-games-organization/backend-package-graphql-helpers": "^1.0.12",
-      "@jest-games-organization/backend-package-graphql-types": "^1.0.15",
+      "@jest-games-organization/backend-package-graphql-helpers": "^3",
+      "@jest-games-organization/backend-package-graphql-types": "^1.0.17",
       "@jest-games-organization/backend-package-object-helpers": "^1.0.2",
       "@jest-games-organization/backend-package-object-types": "^1.0.1",
-      "@jest-games-organization/backend-package-prisma-types": "^1.0.18"
+      "@jest-games-organization/backend-package-prisma-types": "^1.0.22"
     },
     "files": [
       "dist"
@@ -517,15 +517,15 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.3.tgz#e45e384e4b8ec16bce2fd903af78450f6bf7ec98"
     integrity sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==
   
-  "@jest-games-organization/backend-package-graphql-helpers@^1.0.12":
-    version "1.0.12"
-    resolved "https://registry.yarnpkg.com/@jest-games-organization/backend-package-graphql-helpers/-/backend-package-graphql-helpers-1.0.12.tgz#11f4ebde7d4aff8034d67820019c7ca58c90e2f7"
-    integrity sha512-HCgpFFxKYgboIWntkz4hFiMmj4wYt0UPulOuwQZ3BzcLkowiiPJGBWbBCNAFxqhRjsR9iY2/nuVT/2ZORvgeJQ==
+  "@jest-games-organization/backend-package-graphql-helpers@^1.0.13":
+    version "1.0.13"
+    resolved "https://registry.yarnpkg.com/@jest-games-organization/backend-package-graphql-helpers/-/backend-package-graphql-helpers-1.0.13.tgz#e5073ee307cb60897fb69c1a79e615236ad16ae4"
+    integrity sha512-KRextFnxE6UCoumMWUCMQcg7FkFMWhDu1j1rKAarq3YqktIo8GJ2ITG6wFtYvWQVaZFl0t6foTe08wYmiK3XWw==
   
-  "@jest-games-organization/backend-package-graphql-types@^1.0.15":
-    version "1.0.15"
-    resolved "https://registry.yarnpkg.com/@jest-games-organization/backend-package-graphql-types/-/backend-package-graphql-types-1.0.15.tgz#85ed2e6ede322765e7bfe8897eeb348cb3b3b584"
-    integrity sha512-IR0NtunAtcUR6UG8Hu+/VUTybPBHSLMIi6Gez/s+X/O+06RGA0ctit7/DE5/BgIkOCwlPa0/ktHaXVBGFWWK3g==
+  "@jest-games-organization/backend-package-graphql-types@^1.0.17":
+    version "1.0.17"
+    resolved "https://registry.yarnpkg.com/@jest-games-organization/backend-package-graphql-types/-/backend-package-graphql-types-1.0.17.tgz#ce8f1134898decb0824193be868bf20941de50d1"
+    integrity sha512-AHgAtr1KYZf439uxFGZAwoGFYgghXqnJejdgP6Tls6Gm48738+5LawDwB3kBYSKADR7yeoR0FToLR86LNFNqxw==
   
   "@jest-games-organization/backend-package-object-helpers@^1.0.2":
     version "1.0.2"
@@ -537,10 +537,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@jest-games-organization/backend-package-object-types/-/backend-package-object-types-1.0.1.tgz#1901d8a861d2ebf31b2e5f2aedc1d251d0865dd7"
     integrity sha512-FIRtAuwdtg3U2OPjQ4ahfKZsoswdLL9s6FyqdKPPcCcDryPpsvTa5veZZIK7zY/N51K32fww7DSG1H1z8KXRmQ==
   
-  "@jest-games-organization/backend-package-prisma-types@^1.0.18":
-    version "1.0.18"
-    resolved "https://registry.yarnpkg.com/@jest-games-organization/backend-package-prisma-types/-/backend-package-prisma-types-1.0.18.tgz#9ea22f94e5d201cbe719a73e7ef7c0315eb28139"
-    integrity sha512-fYTN+aJTuga+Z/402Md4NClnoVHOj1TPLpu/YHo3e0kY3w9m5GWr5vjokKyvmJWabUOi84Lki5zkkfvq8LVfcg==
+  "@jest-games-organization/backend-package-prisma-types@^1.0.22":
+    version "1.0.22"
+    resolved "https://registry.yarnpkg.com/@jest-games-organization/backend-package-prisma-types/-/backend-package-prisma-types-1.0.22.tgz#0a90feed03697d2d5d16b8587319e54bfae69eb9"
+    integrity sha512-96rM/HoDhtuHoYbsFf/1IwwgUwvIWV3XdE9tt0yP3fi6LrHJMaslfU8GG6rS5NVw8XdSwB3yK3/5VdCNOrBzGQ==
   
   "@jest/console@^29.1.2":
     version "29.1.2"

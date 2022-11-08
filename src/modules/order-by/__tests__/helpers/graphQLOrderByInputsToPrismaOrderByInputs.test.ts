@@ -3,7 +3,7 @@ import { DataObject, Enumerable } from '@jest-games-organization/backend-package
 import { graphQLOrderByInputsToPrismaOrderByInputs } from '../../helpers/graphQLOrderByInputsToPrismaOrderByInputs';
 
 describe('GIVEN the method', () => {
-  let orderByInputs: Enumerable<GraphQLOrderByInput<DataObject>> | null | undefined;
+  let orderByInputs: GraphQLOrderByInput<DataObject>[] | null | undefined;
 
   describe('WHEN the order by inputs are null', () => {
     beforeEach(() => {
@@ -28,38 +28,25 @@ describe('GIVEN the method', () => {
   });
 
   describe('WHEN the order by inputs are defined', () => {
-    describe('AND the order by inputs is not an array', () => {
+    describe('AND the order by inputs is empty', () => {
       beforeEach(() => {
-        orderByInputs = { id: SortOrder.Ascending };
+        orderByInputs = [];
+      });
+
+      test('THEN it should return undefined', () => {
+        const response = graphQLOrderByInputsToPrismaOrderByInputs(orderByInputs);
+        expect(response).toEqual([]);
+      });
+    });
+
+    describe('AND the order by inputs is not empty', () => {
+      beforeEach(() => {
+        orderByInputs = [{ id: SortOrder.Ascending }];
       });
 
       test('THEN it should return the prisma order by inputs', () => {
         const response = graphQLOrderByInputsToPrismaOrderByInputs(orderByInputs);
-        expect(response).toEqual({ id: 'asc' });
-      });
-    });
-
-    describe('AND the order by inputs is an array', () => {
-      describe('AND the order by inputs is empty', () => {
-        beforeEach(() => {
-          orderByInputs = [];
-        });
-
-        test('THEN it should return undefined', () => {
-          const response = graphQLOrderByInputsToPrismaOrderByInputs(orderByInputs);
-          expect(response).toEqual([]);
-        });
-      });
-
-      describe('AND the order by inputs is not empty', () => {
-        beforeEach(() => {
-          orderByInputs = [{ id: SortOrder.Ascending }];
-        });
-
-        test('THEN it should return the prisma order by inputs', () => {
-          const response = graphQLOrderByInputsToPrismaOrderByInputs(orderByInputs);
-          expect(response).toEqual([{ id: 'asc' }]);
-        });
+        expect(response).toEqual([{ id: 'asc' }]);
       });
     });
   });

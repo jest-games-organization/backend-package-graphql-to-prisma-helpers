@@ -2,7 +2,7 @@ import { SortOrder as GraphQLSortOrder } from '@jest-games-organization/backend-
 import { SortOrder as PrismaSortOrder } from '@jest-games-organization/backend-package-prisma-types';
 
 /**
- * Map the GraphQL sort order to a Prisma sort order.
+ * Maps the GraphQL sort order to a Prisma sort order.
  * @param sortOrder The GraphQL sort order.
  * @returns The Prisma sort order.
  */

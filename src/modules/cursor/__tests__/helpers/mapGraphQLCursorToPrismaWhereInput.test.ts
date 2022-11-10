@@ -52,13 +52,13 @@ describe('GIVEN the mapGraphQLCursorToPrismaWhereInput method', () => {
               { isAdmin: { equals: null } },
               {
                 OR: [
-                  { updatedAt: { gt: 'mockUpdatedAt' } },
+                  { updatedAt: { lt: 'mockUpdatedAt' } },
                   {
                     AND: [
                       { updatedAt: { equals: 'mockUpdatedAt' } },
                       {
                         OR: [
-                          { createdAt: { lt: 'mockCreatedAt' } },
+                          { createdAt: { gt: 'mockCreatedAt' } },
                           {
                             AND: [
                               { createdAt: { equals: 'mockCreatedAt' } },

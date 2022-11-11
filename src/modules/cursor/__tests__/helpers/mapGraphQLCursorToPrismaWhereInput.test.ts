@@ -31,12 +31,7 @@ describe('GIVEN the mapGraphQLCursorToPrismaWhereInput method', () => {
     beforeEach(() => {
       cursor = encodeObject({
         args: {
-          orderBy: [
-            { isAdmin: GraphQLSortOrder.Descending },
-            { updatedAt: GraphQLSortOrder.Ascending },
-            { createdAt: GraphQLSortOrder.Descending },
-            { id: GraphQLSortOrder.Ascending },
-          ],
+          orderBy: [{ isAdmin: 'desc' }, { updatedAt: 'asc' }, { createdAt: 'desc' }, { id: 'asc' }],
         },
         data: { id: null, createdAt: 'mockCreatedAt', updatedAt: 'mockUpdatedAt', isAdmin: null },
       });

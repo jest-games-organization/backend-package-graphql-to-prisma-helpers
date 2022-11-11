@@ -30,7 +30,7 @@ export const mapGraphQLCursorToPrismaWhereInput = <Record extends { [key: string
     const [key, direction] = Object.entries(args.orderBy[i])[0];
 
     // Check if the direction is ascending.
-    const isAsc = direction === SortOrder.Ascending;
+    const isAsc = direction === 'asc';
 
     // Get the data value for the order by key.
     const value = data[key];

@@ -39,7 +39,7 @@ export const mapGraphQLCursorToPrismaWhereInput = <Record extends { [key: string
     const isNull = value === null;
 
     // Get the first OR block.
-    const orBlock1 = isNull ? { [key]: { not: null } } : { [key]: isAsc ? { lt: value } : { gt: value } };
+    const orBlock1 = isNull ? { [key]: { not: null } } : { [key]: isAsc ? { gt: value } : { lt: value } };
 
     // Get the second OR block.
     const orBlock2 = isLast ? undefined : { AND: [{ [key]: { equals: value } }, prismaWhereInput] };
